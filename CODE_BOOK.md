@@ -1,16 +1,10 @@
----
-title: "run_analysis_CodeBook"
-author: "AyahFouad"
-date: "9 ãÇÑÓ¡ 2019"
-output: html_document
----
 
 #####This Repository is to submit the thid course's project in Coursera "Data Science Specialization", which is graded by peers as part of "Peer-graded Assignment: Getting and Cleaning Data Course Project" section.
 
 #####The following steps demonestrates steps performed to clean and analyse tidy data as per required in the project:
 
-####**Step 1**: 
-##### Downloading Data and setting work directory
+#### **Step 1**: 
+#####  Downloading Data and setting work directory
 
 - The data used for this project was downloaded and extracted from the following Url:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
@@ -18,7 +12,7 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 - And the data provided was in a folder called "UCI HAR Dataset"
 - Instructions in the files "READ ME.txt" and "Features_info.txt" were followed to read the data.
 
-####**Step 2**: 
+#### **Step 2**: 
 ##### Setting prelimenary Variables Names
 
 - As per the instruction in "READ ME.txt" and "Features Info.txt" the following variables were assigned:
@@ -32,15 +26,15 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
      4. **test_set** : 2947 rows, 561 columns :
      which contains recorded features for test data
      5. **test_lables** : 2947 rows, 1 columns :
-     which contains test data of activities’code labels
+     which contains test data of activitiesâ€™code labels
      6. **subject_train** : 7352 rows, 1 column :
      which contains the data recorded for train subjects which represents 70% of total subjects
      7. **training_set** : 7352 rows, 561 columns :
      which contains recorded features for train data
      8. **training_lables** : 7352 rows, 1 columns  :
-     which contains train data of activities’code labels
+     which contains train data of activitiesâ€™code labels
      
-####**Step 3** : 
+#### **Step 3** : 
 ##### Changing the names of data frames to be more descriptive:
 
 - After reading the data frames and assigning relatave variables, names of each data fram was changed as follows to be more descriptive and to be able to combine test and training data frames into one data set:
@@ -55,17 +49,20 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
      8. **training_lables** : col1= "code"
      
      
-####**Step 4** : 
+#### **Step 4** : 
 ##### Merging test data with training data
      
 - the following variables are used to merge data sets of test and train:
      
-     1.**set** : Is a data set built by staking "test_set" and "training_set" data frames by using rbind() function
+     1. **set** : Is a data set built by staking "test_set" and "training_set" data frames by using rbind() function
+     
      2. **lable** : Is a data set built by staking "training_lables" and "test_lables" by using rbind() function
+     
      3. **subject** : Is a data set build by staking "subject_test" and "subject_train" sets by using rbind() function
+     
      4. **Merged_Data** : Is a data set built by combining "subject", "lable" and "set" data frames created as per the above three points.
      
-####**Step 5** : 
+#### **Step 5** : 
 ##### Selecting only measurements of "Mean" and "Standard Deviation" from the data set
 
 - At the beginning of this step we have a data frame called "Merged_Data" with diminsions (10299 rows, 563 column) , where we selected only columns of mean and standard deviation measurements by using the following variables :
@@ -78,7 +75,7 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
      6. **output_data** : is a data fram which is the combination of "subject", "lable" and "mean_std" data sets
      
   
-####**Step 6** : 
+#### **Step 6** : 
 ##### Adding the activity name to the data set
 
 - At this step the column "code" in "output_data" set is replaced with the name of activity as "WALKING", "WALKING_UPSTAIRS", "WALKING_DOWNSTAIRS", "SITTING", "STANDING" and "LAYING", by using this code:
@@ -86,19 +83,19 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
      
 
      
-####**Step 7** : 
+#### **Step 7** : 
 ##### changind the names of columns to be more descriptive
 
 - code column in output_data renamed into activities_type
-- All "Acc" in column’s name replaced by "Accelerometer"
-- All 'Gyro' in column’s name replaced by 'Gyroscope'
-- All 'BodyBody' in column’s name replaced by 'Body'
-- All 'Mag' in column’s name replaced by 'Magnitude'
-- All 'start' with character f in column’s name replaced by 'Frequency'
-- All start with 't' in column’s name replaced by 'Time'
+- All "Acc" in columnâ€™s name replaced by "Accelerometer"
+- All 'Gyro' in columnâ€™s name replaced by 'Gyroscope'
+- All 'BodyBody' in columnâ€™s name replaced by 'Body'
+- All 'Mag' in columnâ€™s name replaced by 'Magnitude'
+- All 'start' with character f in columnâ€™s name replaced by 'Frequency'
+- All start with 't' in columnâ€™s name replaced by 'Time'
 
 
-####**Step 8** : 
+#### **Step 8** : 
 ##### creating independent tidy data set with the average of each variable for each activity and each subject
 
 - **FinalData** : is a dataset with the mean avarage for each activity and subject in the output_data.
