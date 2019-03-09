@@ -1,7 +1,7 @@
 
-#####This Repository is to submit the thid course's project in Coursera "Data Science Specialization", which is graded by peers as part of "Peer-graded Assignment: Getting and Cleaning Data Course Project" section.
+##### This Repository is to submit the thid course's project in Coursera "Data Science Specialization", which is graded by peers as part of "Peer-graded Assignment: Getting and Cleaning Data Course Project" section.
 
-#####The following steps demonestrates steps performed to clean and analyse tidy data as per required in the project:
+##### The following steps demonestrates steps performed to clean and analyse tidy data as per required in the project:
 
 #### **Step 1**: 
 #####  Downloading Data and setting work directory
