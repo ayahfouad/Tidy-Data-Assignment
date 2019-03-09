@@ -22,14 +22,14 @@ training_lables <-
      
      #changing columns names per dataframe
      #=========================================
-setNames(activities,old = c("V1","V2"),new = c("code","activity"))
-setNames(features,old = c("V1","V2"),new = c("n","functions"))
-setNames(subject_test,old = "V1",new = "subject")
+names(activities) <- c("code","activity")
+names(features) <- c("n","functions")
+names(subject_test) <- c("subject")
 names(test_set) <- as.character(features$functions)
-setNames(test_lables,old = "V1", new = "code")
-setNames(subject_train,old = "V1",new = "subject")
+names(test_lables) <-  c("code")
+names(subject_train) <-  c("subject")
 names(training_set) <- as.character(features$functions)
-setNames(training_lables,old = "V1",new = "code")
+names(training_lables) <-  c("code")
 
      
      #Merging the training and the test sets to create one data set
